@@ -1,0 +1,75 @@
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    font-family: yekan;
+    font-size: 13px;
+    color: #303030;
+
+}
+
+.accordion{
+    width: 90%;
+    height: 300px;
+    direction: rtl;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #76c5b1 #d9d9d9;
+}
+
+.accordion-item{
+    border: 1px solid #ddd;
+    margin: 15px;
+    border-radius: 10px;    
+}
+
+.accordion-item:hover{
+    box-shadow: -3px 3px 10px 6px rgba(87, 206, 176, 0.1);
+    border-color: #57ceb033;
+}
+
+.heading{
+    padding: 15px;
+    margin: 0;
+    font-size: 1.2em;
+    position: relative;
+    cursor: pointer;
+}
+
+.content{
+    margin: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.heading::before,
+.heading::after{
+    content: '';
+    display: inline-block;
+    width: 17px;
+    height: 3px;
+    position: absolute;
+    background-color: rgb(31, 31, 31);
+    left: 15px;
+    top: 27px;
+    border-radius: 2px;
+}
+
+.heading::after{
+    transform: rotate(90deg);
+}
+
+.heading.active + .content{
+    height: auto;
+    margin: 15px;
+}
+
+.heading.active::after{
+    transform: rotate(0deg);
+}
+
+@font-face{
+    font-family: Yekan;
+    src: url(fonts/Yekan.woff);
+}
